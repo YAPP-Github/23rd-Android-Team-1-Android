@@ -96,7 +96,7 @@ class SignUpViewModel @Inject constructor(
                             } else {
                                 null
                             },
-                            termAgreement = uiState.value.agreedTerms,
+                            termAgreement = uiState.value.agreedTerms.filter { it > 0 },
                         ),
                     ).onSuccess {
                         postSideEffect(SignUpEffect.NavigateToReceived)
